@@ -1,0 +1,58 @@
+✅ Technologies/Libraries Used:
+Flask: For creating the web API.
+
+NLTK: For natural language processing tasks like tokenization and stopword removal.
+
+Sumy: Specifically, the LSA (Latent Semantic Analysis) summarizer.
+
+BeautifulSoup: For web scraping (fetching article content from URLs).
+
+CORS: To allow cross-origin resource sharing.
+
+Requests: For making HTTP requests.
+
+🔍 What is LSA in this context?
+The summarization is done using LSA (Latent Semantic Analysis) via the LsaSummarizer from the Sumy library.
+
+LSA is an unsupervised, statistical NLP method — not a deep learning model.
+
+It uses Singular Value Decomposition (SVD) on a term-sentence matrix to extract the most "informative" sentences from the text.
+
+It does not require training data or a neural network.
+
+❌ What is NOT used (i.e., no DL):
+No neural networks (CNNs, RNNs, Transformers, etc.)
+
+No pretrained models like BERT, GPT, T5, etc.
+
+No PyTorch or TensorFlow.
+
+No word embeddings or contextual embeddings (like Word2Vec, GloVe, or BERT embeddings).
+
+✅ How to Add Deep Learning (Optional):
+If you want to integrate a DL-based summarizer, you could use models like:
+
+Model	Summary
+BART	Transformer-based encoder-decoder for summarization. Available via Hugging Face.
+T5	Text-to-Text Transformer, very good for summarization tasks.
+PEGASUS	State-of-the-art summarization model trained specifically for abstractive summarization.
+
+Example integration (optional):
+
+python
+Copy
+Edit
+from transformers import pipeline
+
+summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
+summary = summarizer(content, max_length=130, min_length=30, do_sample=False)
+✅ Summary:
+Aspect	Used?
+Deep Learning	❌ No
+Traditional NLP	✅ Yes (LSA via Sumy, NLTK)
+Web scraping	✅ Yes (BeautifulSoup)
+Web API	✅ Yes (Flask)
+
+So, to answer your question clearly:
+
+🔸 The DL (Deep Learning) part is not present in this project — it uses traditional statistical NLP methods, specifically LSA, for summarization.

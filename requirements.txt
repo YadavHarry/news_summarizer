@@ -1,0 +1,6 @@
+Flask
+flask-cors
+nltk
+requests
+beautifulsoup4
+sumy
